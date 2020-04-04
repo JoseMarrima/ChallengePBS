@@ -331,51 +331,6 @@ public class PaymentActivity extends AppCompatActivity implements
         }
     }
 
-
-    // Write user entered data to the "LastPayment.txt"
-    private void writeToFile(String data, Context context) {
-        try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
-                    context.openFileOutput("LastPayment.txt", Context.MODE_PRIVATE));
-
-            outputStreamWriter.write(data);
-            outputStreamWriter.close();
-        } catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
-        }
-    }
-
-    // Read data from "LastPayment.txt"
-    private String readFromFile(Context context) {
-
-        String jsonDataSavedInFile = "";
-
-        try {
-            InputStream inputStream = context.openFileInput("LastPayment.txt");
-
-            if (inputStream != null) {
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String receiveString = "";
-                StringBuilder stringBuilder = new StringBuilder();
-
-                while ((receiveString = bufferedReader.readLine()) != null) {
-                    stringBuilder.append("\n").append(receiveString);
-                }
-
-                inputStream.close();
-                jsonDataSavedInFile = stringBuilder.toString();
-            }
-
-        } catch (FileNotFoundException e) {
-            Log.e("Main activity", "File not found: " + e.toString());
-        } catch (IOException e) {
-            Log.e("Main activity", "Can not read file: " + e.toString());
-        }
-
-        return jsonDataSavedInFile;
-    }
-
     public boolean isFilePresent(Context context, String fileName) {
         String path = context.getFilesDir().getAbsolutePath() + "/" + fileName;
         File file = new File(path);
