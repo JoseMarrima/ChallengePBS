@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".payment.PaymentActivity"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/total_amount_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/total_amount"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/total_amount_textview"
+            app:layout_constraintTop_toTopOf="@+id/total_amount_textview"
+            tools:text="1250" />
+
+        <TextView
+            android:id="@+id/payments_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/payments"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/total_amount_textview"
+            app:layout_constraintTop_toBottomOf="@+id/total_amount_textview" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cash_chip"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:visibility="gone"
+            android:text="Cash = Rs "
+            app:layout_constraintStart_toStartOf="@+id/payments_textview"
+            app:layout_constraintTop_toBottomOf="@+id/payments_textview"/>
+<!--        android:text="@{paymentDetailsViewModel[0].getAmount()}"-->
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bank_transfer_chip"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:text="Bank Transfer = Rs "
+            app:closeIconEnabled="true"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/cash_chip"
+            app:layout_constraintTop_toBottomOf="@+id/cash_chip"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/credit_card_chip"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:text="Credit Card = Rs "
+            app:closeIconEnabled="true"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/bank_transfer_chip"
+            app:layout_constraintTop_toBottomOf="@+id/bank_transfer_chip"/>
+
+        <TextView
+            android:id="@+id/add_payments_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="159dp"
+            android:text="@string/add_payment"
+            android:textColor="#0058FC"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payments_textview" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius="10dp"
+            android:text="@string/save"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_payments_textview"
+            app:strokeColor="#000000"
+            app:strokeWidth="2dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

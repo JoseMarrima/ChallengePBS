@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ChallengePBS</string>
+    <string name="total_amount">Total Amount = ₹</string>
+    <string name="payments">Payments</string>
+    <string name="add_payment"><u>Add payment</u></string>
+    <string name="save">Save</string>
+    <string name="provider">Provider (ICICI, Citibank, etc.)</string>
+    <string name="transaction_reference">Transaction Reference</string>
+    <string name="amount">Amount</string>
+    <string name="field_required">This field is required!</string>
+    <string name="file_name">LastPayment.txt</string>
+
+</resources>

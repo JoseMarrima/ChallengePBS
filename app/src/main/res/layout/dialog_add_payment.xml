@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/add_payment_textview_dialogbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:text="Add Payment"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/rupee_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="₹"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/add_payment_textview_dialogbox"
+            app:layout_constraintTop_toBottomOf="@+id/add_payment_textview_dialogbox" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amount_edit_text_input_layout"
+            style="@style/Widget.Contact.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="42dp"
+            android:hint="@string/amount"
+            app:layout_constraintBottom_toBottomOf="@+id/rupee_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rupee_textview"
+            app:layout_constraintTop_toTopOf="@+id/rupee_textview">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount_editText_dialogbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/amount_edit_text_input_layout"
+            app:layout_constraintStart_toStartOf="@+id/add_payment_textview_dialogbox"
+            app:layout_constraintTop_toBottomOf="@+id/amount_edit_text_input_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/provider_edit_text_input_layout"
+            style="@style/Widget.Contact.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorEnabled="true"
+            android:hint="@string/provider"
+            app:layout_constraintEnd_toEndOf="@+id/spinner"
+            app:layout_constraintStart_toStartOf="@+id/spinner"
+            app:layout_constraintTop_toBottomOf="@+id/spinner"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/provider_editText_dialogbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/transaction_reference_edit_text_input_layout"
+            style="@style/Widget.Contact.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:errorEnabled="true"
+            android:hint="@string/transaction_reference"
+            app:layout_constraintEnd_toEndOf="@+id/provider_edit_text_input_layout"
+            app:layout_constraintStart_toStartOf="@+id/provider_edit_text_input_layout"
+            app:layout_constraintTop_toBottomOf="@+id/provider_edit_text_input_layout"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/transaction_reference_editText_dialogbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
